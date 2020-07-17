@@ -1,0 +1,79 @@
+/* ==========================================================================
+   CUSTOM STYLES
+   ========================================================================== */
+
+
+.logo {
+    margin-left: 10%;
+    width:80%;
+}
+
+nav {
+  height: 90px;
+  a {
+    font-size: 1.2em;
+  }
+}
+
+#navbarNavDropdown {
+  padding-left: 0;
+}
+
+input[type=text]:focus, input[type=password]:focus{
+  outline: 2px solid var(--primary-color);  
+}
+
+.dropdown>.dropdown-menu {
+  top: 200%;
+  transition: 0.3s all ease-in-out;
+}
+.dropdown:hover>.dropdown-menu {
+  display: block;
+  top: 100%;
+}
+
+.dropdown>.dropdown-toggle:active {
+  /*Without this, clicking will make it sticky*/
+    pointer-events: none;
+}
+
+.card {
+    padding: 0; 
+    border-color: var(--primary-color);
+  }
+  
+.badge-primary {
+background-color: var(--secondary-color);
+}
+
+
+
+
+.article__results, .user__results {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.1em;
+  padding: 25px;
+  &:hover {
+    background-color: var(--primary-color);
+  }
+}
+
+.btn--search {
+  background-color: var(--primary-color);
+  color: white;
+  &:hover {
+     background-color: var(--secondary-color);
+     color: white;
+   
+   }
+}
+
+.text__underline::after {
+  border-bottom: 6px solid
+  var(--primary-color);
+  content: "";
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  width: 20%;
+}

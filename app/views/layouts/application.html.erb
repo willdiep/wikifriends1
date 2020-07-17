@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WikiFriends</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700|Source+Sans+Pro:400,700&display=swap" rel="stylesheet">
+
+  
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
+
+  <body>
+
+  
+  <nav class="navbar navbar-expand-lg navbar-light bg-light container-fluid">
+    <a class="navbar-brand" href="/">
+      <%= image_tag ("logo-cropped-side.png"), class: "logo" %>
+
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <% if current_user %>
+        <li class="nav-item">
+          <a class="nav-link" href="<%= articles_path %>">Find Articles</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<%= users_path %>">All Profiles</a>
+        </li>
+        <li class="dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            My Profile
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href=<%="/profile"%>>View Profile</a>
+            <a class="dropdown-item" href=<%="/users/#{current_user.id}/edit"%>>Edit Profile</a>
+            <a class="dropdown-item" href=<%="/users/#{current_user.id}"%>>View My Articles</a>
+    
+            <%= link_to "Log Out", "/sessions", method: :delete, class: "dropdown-item" %>
+  
+          </div>
+          <% end %>
+        </%=>
+
+
+
+      <%# <div class="theme-switch">
+        <div class="switch"></div>
+      </div> %>
+
+
+
+
+
+
+      </ul>
+    </div>
+  </nav>
+  
+  <main class="container">
+
+
+    <%= yield %>
+
+  </main>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
+<footer>
+
+</footer>
+
+
+
+
+
+  </body>
+</html>
